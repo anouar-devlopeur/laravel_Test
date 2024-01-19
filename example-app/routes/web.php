@@ -17,5 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/action', function () {
-    return view('action');
+    $filter=request('style');
+    if(isset($filter)){
+        return 'this page is wiewing <span style="color:red">'.$filter.'</span>';
+  
+    }
+    return 'this page is wiewing <span style="color:red">All Products</span>';
+    // return view('action');
 });
