@@ -10,10 +10,13 @@ class StaticController extends Controller
         return view('welcome');
     }
     function about() {
-        return '<h1>About</h1>';
+        return view('about');
+    }   
+     function action() {
+        return view('action');
     }
     function contact() {
-        return '<h1>Contact</h1>';
+        return view('contact');
     }
 
    

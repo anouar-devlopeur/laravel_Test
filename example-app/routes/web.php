@@ -12,12 +12,17 @@ use App\Http\Controllers\StaticController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+// methode 2 (/ == .)
+Route::get('/',[StaticController::class,'index'])->name('home.index');
+Route::get('/about',[StaticController::class,'about'])->name('home.about');
+Route::get('/contact',[StaticController::class,'contact'])->name('home.contact');
+Route::get('/action',[StaticController::class,'action'])->name('home.action');
 
-Route::get('/',[StaticController::class,'index']);
-Route::get('/about',[StaticController::class,'about']);
-Route::get('/contact',[StaticController::class,'contact']);
-
-
+// mthode 1
+// Route::get('/',[StaticController::class,'index']);
+// Route::get('/about',[StaticController::class,'about']);
+// Route::get('/contact',[StaticController::class,'contact']);
+// Route::get('/action',[StaticController::class,'action']);
 
 
 
@@ -27,13 +32,13 @@ Route::get('/contact',[StaticController::class,'contact']);
 
 
 // {request}
-Route::get('/action/{category?}', function ($category=null) {
-if(isset($category)){
-    return '<h1>'.$category.'</h1>';
-}
-return '<h1>Action</h1>';
+// Route::get('/action/{category?}', function ($category=null) {
+// if(isset($category)){
+//     return '<h1>'.$category.'</h1>';
+// }
+// return '<h1>Action</h1>';
    
-});
+// });
 
 // Route::get('/action', function () {
 //     $filter=request('style');
