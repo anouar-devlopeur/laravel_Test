@@ -818,4 +818,17 @@ nav a{
 }
 nav a:hover{
     color: #fff;
+    text-decoration: none;
+
+}
+li:hover{
+   background: #ef4444;
+}
+
+ul li {
+    border: 1px solid;
+    border-radius: 5px;
+    background: antiquewhite;
+    padding: 10px;
+    margin: 5px;
 }
