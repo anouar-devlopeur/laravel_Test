@@ -3,16 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Computer;
 
 class ComputersController extends Controller
 {
-  private static function getData(){
-    return[
-    ['id'=>1,'name'=>'LENOVO','origin'=>'maroc'],
-    ['id'=>2,'name'=>'DELL','origin'=>'US'],
-    ['id'=>3,'name'=>'HP','origin'=>'ESP']
-    ];
-  }
+//   private static function getData(){
+//     return[
+//     ['id'=>1,'name'=>'LENOVO','origin'=>'maroc'],
+//     ['id'=>2,'name'=>'DELL','origin'=>'US'],
+//     ['id'=>3,'name'=>'HP','origin'=>'ESP']
+//     ];
+//   }
 
 
 
@@ -28,7 +29,7 @@ class ComputersController extends Controller
     //    dd($data);
     //    die();
         return view('computers.index',[
-            'computers'=>self::getData()
+            'computers'=>Computer::all()
         ]);
     }
 
@@ -37,7 +38,7 @@ class ComputersController extends Controller
      */
     public function create()
     {
-        //
+        return view('computers.create');
     }
 
     /**
@@ -45,21 +46,25 @@ class ComputersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $computer=new Computer();
+      $computer->name=$request->input('computer-name');
+      $computer->origin=$request->input('computer-origin');
+      $computer->price=$request->input('computer-price');
+      $computer->save();
+      return redirect()->route('computers.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        $computers=self::getData();
-        $index=array_search($id,array_column($computers,'id'));
+        $index= Computer::find($id);
         if($index=== false){
             abort(404);
         }
         return view('computers.show',[
-            'item'=> $computers[$index]
+            'item'=> $index
         ]);
     }
 

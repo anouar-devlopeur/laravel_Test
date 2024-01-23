@@ -1,7 +1,7 @@
 @extends('layout.master')
 @section('title','About')
 @section('content')
-<div class="max-w-7xl mx-auto p-6 lg:p-8">
+<div class="max-w-7xl w-3/6 mx-auto p-6 lg:p-8">
 
     <div class="flex justify-center mt-16 px-0 sm:items-center sm:justify-between">
         <h1 class="text-2xl font-bold">About To Project Test</h1>
