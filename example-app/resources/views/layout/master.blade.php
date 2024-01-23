@@ -22,6 +22,7 @@
             <a class="text-2xl hover:bg-red-700 rounded-[10px]" href="{{ route('home.index')}}">Home</a>
             <a class="text-2xl hover:bg-red-700 rounded-[10px]" href="{{ route('home.about')}}">About</a>
             <a class="text-2xl hover:bg-red-700 rounded-[10px]" href="{{ route('computers.index')}}">Computers</a>
+            <a class="text-2xl hover:bg-red-700 rounded-[10px]" href="{{ route('computers.create')}}">Create</a>
             <a class="text-2xl hover:bg-red-700 rounded-[10px]" href="{{ route('home.contact')}}">Contact</a>
          </nav>
     </div>
