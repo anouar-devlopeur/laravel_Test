@@ -19,6 +19,7 @@ Route::get('/about',[StaticController::class,'about'])->name('home.about');
 Route::get('/contact',[StaticController::class,'contact'])->name('home.contact');
 // Route::get('/action',[StaticController::class,'action'])->name('home.action');
  Route::resource('computers',ComputersController ::class);
+
 // mthode 1
 // Route::get('/',[StaticController::class,'index']);
 // Route::get('/about',[StaticController::class,'about']);
