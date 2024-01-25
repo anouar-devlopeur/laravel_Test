@@ -11,13 +11,17 @@ class StaticController extends Controller
     }
     function about() {
         return view('about');
-    }   
+    }
     //  function action() {
     //     return view('action');
     // }
     function contact() {
         return view('contact');
     }
+    function categorie() {
+        return view('categorie');
+    }
 
-   
+
+
 }

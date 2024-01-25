@@ -18,6 +18,7 @@ use App\Http\Controllers\ComputersController;
 Route::get('/',[StaticController::class,'index'])->name('home.index');
 Route::get('/about',[StaticController::class,'about'])->name('home.about');
 Route::get('/contact',[StaticController::class,'contact'])->name('home.contact');
+Route::get('/categorie',[StaticController::class,'categorie'])->name('home.categorie');
 // Route::get('/action',[StaticController::class,'action'])->name('home.action');
  Route::resource('computers',ComputersController ::class);
 
@@ -39,14 +40,14 @@ Route::get('/contact',[StaticController::class,'contact'])->name('home.contact')
 //     return '<h1>'.$category.'</h1>';
 // }
 // return '<h1>Action</h1>';
-   
+
 // });
 
 // Route::get('/action', function () {
 //     $filter=request('style');
 //     if(isset($filter)){
 //         return 'this page is wiewing <span style="color:red">'.$filter.'</span>';
-  
+
 //     }
 //     return 'this page is wiewing <span style="color:red">All Products</span>';
 //     // return view('action');
