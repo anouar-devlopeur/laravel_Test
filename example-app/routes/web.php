@@ -35,3 +35,26 @@ Route::get('/categorie',[StaticController::class,'categorie'])->name('home.categ
 });
 
 require __DIR__.'/auth.php';
+
+
+
+
+// methode request
+// {request}
+// Route::get('/action/{category?}', function ($category=null) {
+// if(isset($category)){
+//     return '<h1>'.$category.'</h1>';
+// }
+// return '<h1>Action</h1>';
+
+// });
+
+// Route::get('/action', function () {
+//     $filter=request('style');
+//     if(isset($filter)){
+//         return 'this page is wiewing <span style="color:red">'.$filter.'</span>';
+
+//     }
+//     return 'this page is wiewing <span style="color:red">All Products</span>';
+//     // return view('action');
+// });
