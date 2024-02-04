@@ -1,5 +1,5 @@
 @extends('layout.master')
-@section('title','Home')
+@section('title','Dashboard')
 @section('content')
 <div class="max-w-7xl w-3/6 mx-auto p-6 text-center lg:p-8">
 

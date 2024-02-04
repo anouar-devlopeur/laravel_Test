@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StaticController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ComputersController;
 
 /*
@@ -14,21 +15,26 @@ use App\Http\Controllers\ComputersController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-// methode 2 (/ == .)
+
+
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/',[StaticController::class,'index'])->name('home.index');
+Route::middleware('auth')->group(function () {
+
 Route::get('/about',[StaticController::class,'about'])->name('home.about');
 Route::get('/contact',[StaticController::class,'contact'])->name('home.contact');
 Route::get('/categorie',[StaticController::class,'categorie'])->name('home.categorie');
 // Route::get('/action',[StaticController::class,'action'])->name('home.action');
  Route::resource('computers',ComputersController ::class);
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
-// mthode 1
-// Route::get('/',[StaticController::class,'index']);
-// Route::get('/about',[StaticController::class,'about']);
-// Route::get('/contact',[StaticController::class,'contact']);
-// Route::get('/action',[StaticController::class,'action']);
-
-
+require __DIR__.'/auth.php';
 
 
 
